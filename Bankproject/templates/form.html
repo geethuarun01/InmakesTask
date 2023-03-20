@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<h1 style="text-align:center">ENTER YOUR DETAILS</h1>
+<form class="container text-center" action="" method="post">
+    {% csrf_token %}
+    <label>NAME</label>
+      <input type="text" name="Name" placeholder="enter your name"><br>
+       <label>DOB</label>
+        <input type="date" name="DOB" placeholder="enter your DOB"><br>
+         <label>AGE</label>
+         <input type="number" name="Age" placeholder="enter your age"><br>
+          <label>MALE</label>
+          <input type="radio" name="Male"><br>
+           <label>FEMALE</label>
+            <input type="radio" name="Female"><br>
+             <label>PHONE NUMBER</label>
+              <input type="tel" name="Phone number" placeholder="enter your phone number"><br>
+               <label>EMAIL</label>
+                <input type="email" name="Email" placeholder="enter your email "><br>
+                 <label>ADDRESS</label>
+                  <input type="text" name="Address" placeholder="enter the address"><br>
+                   <label>DISTRICT</label>
+
+      <select id="district" name="district">
+          <option name="COCHIN">COCHIN</option>
+            <option value="THIRUVANANTHAPURAM">THIRUVANANTHAPURAM</option>
+             <option value="KOZHIKODE">KOZHIKODE</option>
+              </select>
+
+      <select id="branch" name="branch">
+          <optgroup label="COCHIN"></optgroup>
+           <option value="Aluva">Aluva</option>
+            <option value="Edappally">Edappally</option>
+             <optgroup label="THIRUVANANTHAPURAM"></optgroup>
+              <option value="Kazhakoottam">Kazhakoottam</option>
+               <option value="Karyavattom">Karyavattom</option>
+               <optgroup label="KOZHIKODE"></optgroup>
+               <option value="Vadakara">Vadakara</option>
+                <option value="Koyilandy">Koyilandy</option>
+
+    </select><br>
+     <label>ACCOUNT TYPE</label>
+      <select id="account" name="account">
+       <option value="savings">SAVINGS</option>
+       <option value="Edappally">CURRENT</option>
+        </select><br>
+
+        <label>DEBIT CARD</label>
+         <input type="checkbox" name="Debit card"><br>
+          <label>CREDIT CARD</label>
+           <input type="checkbox" name="Credit card"><br>
+            <label>CHEQUE BOOK</label>
+             <input type="checkbox" name="Cheque book"><br>
+               <button class="btn btn-success" onclick="alert('submitted succesfully')">Submit</button>
+<!--    <script>-->
+<!--              $("#submitForm").click(function() {-->
+<!--             alert("The Form has been Submitted.");-->
+<!--              });-->
+<!--</script>-->
+           <button class="btn btn-danger"> Logout</button>
+
+</form>
+
+
+{% endblock %}

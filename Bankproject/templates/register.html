@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<h2 style=" text-align:center">REGISTER HERE</h2>
+<form class="container text-center"  action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter the Username"><br>
+    <input type="password" name="password" placeholder="Enter a strong password"><br>
+    <input type="password" name="cpassword" placeholder="confirm your password"><br>
+    <a class="btn-btn primary" href="{% url 'credentials:login' %}">SUBMIT</a>
+
+</form>
+
+
+{% endblock %}
